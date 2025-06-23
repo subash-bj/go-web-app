@@ -92,3 +92,4 @@ jobs:
         git add helm/go-web-chart/values.yaml
         git commit -m "Update tag in Helm chart"
         git push
+
