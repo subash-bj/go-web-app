@@ -1,0 +1,34 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{"nginx.ingress.kubernetes.io/rewrite-target":"/"},"name":"go-web-app","namespace":"default"},"spec":{"ingressClassName":"nginx","rules":[{"host":"go-web-app.local","http":{"paths":[{"backend":{"service":{"name":"go-web-app","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}]}}
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  creationTimestamp: "2025-06-22T06:14:40Z"
+  generation: 2
+  name: go-web-app
+  namespace: default
+  resourceVersion: "30718"
+  uid: 5d6e4229-c8f9-46ce-8967-e9dec1e4148b
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: go-web-app.local
+    http:
+      paths:
+      - backend:
+          service:
+            name: go-web-app
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+status:
+  loadBalancer:
+    ingress:
+    - ip: 98.64.19.110
