@@ -8,7 +8,7 @@ image:
   repository: subash111/go-web
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "15904372423"
+  tag: "15904396845"
 
 ingress:
   enabled: false
